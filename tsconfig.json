@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "src/*": [
+        "src/*"
+      ],
+      "@/*": [
+        "src/components/*"
+      ],
+      "@images/*": [
+        "public/images/*"
+      ]
+    },
+    "target": "ESNEXT",
+    "module": "ESNext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "outDir": "./build",
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "noEmit": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "typeRoots": [
+      "node_modules/@types",
+      "typings"
+    ],
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "public"
+  ]
+}
