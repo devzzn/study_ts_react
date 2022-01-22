@@ -6,33 +6,37 @@ const App: React.FC = () => {
 
   const onClickHandler: React.MouseEventHandler<HTMLUListElement> = e => {
     const {
-      dataset: { value },
+      dataset: { value = '' },
     } = e.target as HTMLUListElement;
 
     let result: string = '';
 
-    switch (value) {
-      case 'divide':
-        result = '/';
-        break;
-      case 'multiply':
-        result = '*';
-        break;
-      case 'subtract':
-        result = '-';
-        break;
-      case 'plus':
-        result = '+';
-        break;
-      case 'result':
-        setDisplay(calculate(display));
-        return;
-      default:
-        result = value + '';
-        break;
+    if (display.length === 0 && isNaN(parseInt(value))) {
+      setDisplay('');
+    } else {
+      switch (value) {
+        case 'divide':
+          result = '/';
+          break;
+        case 'multiply':
+          result = '*';
+          break;
+        case 'subtract':
+          result = '-';
+          break;
+        case 'plus':
+          result = '+';
+          break;
+        case 'result':
+          setDisplay(calculate(display));
+          return;
+        default:
+          result = value + '';
+          break;
+      }
+      setDisplay(display + result);
+      result = '';
     }
-    setDisplay(display + result);
-    result = '';
   };
 
   const calculate = (reqDisplay: string): string => {

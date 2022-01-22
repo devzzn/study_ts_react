@@ -1,9 +1,7 @@
-import Contents from '../components/calculator/Contents';
+import Contents from '../components/calculator/Contents2';
 
 function Calculator() {
-    return (
-            <Contents/>
-    );
+  return <Contents />;
 }
 
 export default Calculator;
